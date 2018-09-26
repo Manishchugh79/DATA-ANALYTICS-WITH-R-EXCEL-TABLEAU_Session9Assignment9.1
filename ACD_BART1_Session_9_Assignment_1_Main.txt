@@ -90,6 +90,41 @@ Answer:
    officerâ..s claim, or do they provide evidence that the acceptance rate was significantly less than 40%?
    Use an Î± = 0.01 significance level.
 
+Answer:
+
+# checking consistency with the officers claim & if the acceptance rate was significantly less than 40% 
+# defining null hypo as Ho:p is equal to 0.40
+# and Ha:p less than 0.40
+
+> Ho :  p = 0.4
+> Ha :  p < 0.4
+> alpha = 0.01
+
+# Use qnorm() function 
+> -qnorm(0.99)
+[1] -2.326348
+> 
+
+# finding test statistic
+
+> newucb_data <- as.data.frame(UCBAdmissions)
+> View(newucb_data)
+> dim(newucb_data)
+[1] 24  4
+
+> summary(newucb_data$Admit)
+Admitted Rejected 
+      12       12 
+>
+> phat <- 12/(24)
+> t <- (phat-0.4)/sqrt(0.4*0.6/(24))
+> t
+[1] 1
+> 
+
+# CONCLUSION: test statistic is not less than -2.326348 
+# We accept our null hypothesis Ho
+# The observed data is consistent with the officer's claim at alpha = 0.01(Level of Significance)
 
    Expected Output
 Not Applicable
