@@ -39,6 +39,50 @@ Not Applicable
 1. If Z is norm (mean = 0, sd = 1)
 Find P(Z > 2.64)
 Find P(|Z| > 1.39)
+
+Answer:
+Answer:
+# P(Z > 2.64)
+# consider the entire right hand side (area 0.5)
+# subtract the area from z = 0 to z = 2.64, from the z-table
+# the probability value of z =2.64 in distribution table is 0.4959
+# P(Z > 2.64)=0.5-P( 0 < z < 2.64)=0.5-0.4959=0.0041
+
+# Method2
+> 1 - pnorm(2.64, mean=0, sd=1)
+[1] 0.004145301
+> 
+
+
+# P(|Z| > 1.39)
+
+# use pnorm function
+
+> pnorm(1.39)
+[1] 0.9177356
+> 
+
+> pnorm(-1.39)
+[1] 0.08226444
+> 
+
+> 1-(pnorm(1.39)-pnorm(-1.39))
+[1] 0.1645289
+> 1-(0.9177356-0.08226444)
+[1] 0.1645288
+
+
+# Method2
+# 1 - P(-1.39<X<1.39)
+# probability for z = 1.39 is 0.4177; &
+# probability for z = -1.39 is 0.4177; 
+# P (-1.39<X<1.39) = 0.4177 = 0.4177 = 0.8354
+
+# 1 - P(-1.39<X<1.39)
+> 1 - 0.8354
+[1] 0.1646
+
+
 2. Suppose p = the proportion of students who are admitted to the graduate school of the University of
    California at Berkeley, and suppose that a public relation officer boasts that UCB has historically had a
    40% acceptance rate for its graduate school. Consider the data stored in the table UCBAdmissions from
